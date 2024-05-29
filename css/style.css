@@ -1,0 +1,396 @@
+/* font-family: "Pacifico", cursive; */
+/* font-family: "Righteous", sans-serif; */
+/* font-family: "PT Sans Caption", sans-serif; */
+
+/* submitBG   #bb4120 */
+
+/* headerBF
+background-color: #fec260; */
+
+/* title
+background-image: linear-gradient(to right, #3ca55c, #b5ac49); */
+
+/* background-color: var(--bs-btn-hover-bg);
+--bs-btn-hover-bg: #8a9e23; */
+
+/* border-color: var(--bs-btn-hover-border-color);
+    --bs-btn-hover-border-color: #6e8018; */
+
+/*visitBtn
+     --bs-btn-bg: #9eb23b;
+    --bs-btn-border-color: #9eb23b; */
+
+/* deletBtn
+    --bs-btn-bg: #eb1d36;
+    --bs-btn-border-color: #eb1d36;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #d30820;
+    --bs-btn-hover-border-color: #ba081d; */
+
+
+::selection {
+    background-color: #fec260;
+    color: #352e28;
+}
+
+
+body {
+    background-color: #f7ecde;
+}
+
+:root {
+
+    --bs-warning: #ffc1076b;
+    --bs-danger: #dc3545;
+
+
+    --text-primary-color: rgb(33, 37, 41);
+    --text-light: rgb(204, 204, 205);
+
+}
+
+.header {
+    font-family: "Pacifico", cursive;
+    font-size: 50px;
+    font-weight: 500;
+    line-height: 60px;
+    color: rgb(53, 46, 40);
+}
+
+.title {
+    font-family: "Righteous", sans-serif;
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 30px;
+}
+
+.label,
+.theader,
+.tdata {
+    font-family: "PT Sans Caption", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    color: var(--text-primary-color);
+}
+
+.btnTxt {
+    font-family: "PT Sans Caption", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: white;
+}
+
+.theader,
+.tdata {
+    font-weight: 400;
+}
+
+
+h1::after {
+    content: "";
+    width: 100%;
+    height: 20px;
+    position: absolute;
+    background-color: #fec260;
+    left: 0;
+    bottom: 7px;
+    z-index: -5;
+    transition: all 0.5s;
+}
+
+h1:hover::after {
+    height: 52%;
+}
+
+.content {
+    border-top: 2px dotted var(--text-primary-color);
+    border-bottom: 2px dotted var(--text-primary-color);
+
+    h2 {
+        /* background: #3CA55C; */
+        /* background: linear-gradient(to right, rgb(60, 165, 92) 0%, rgb(181, 172, 73) 100%) text; */
+        background: linear-gradient(to right, #3ca55c 0%, #b5ac49 100%);
+
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    input {}
+
+    input:focus {
+        border: 1px solid var(--bs-warning);
+        box-shadow: 0px 0px 4px 4px var(--bs-warning);
+    }
+
+    #submitBtn {
+        background-color: #d1512d;
+
+    }
+
+    #submitBtn:hover {
+
+        background-color: #bb4120;
+    }
+
+
+}
+
+thead {
+    /* height: 20px; */
+}
+
+tr {
+    height: 60px;
+}
+
+.btn-visit {
+    background-color: #9eb23b;
+}
+
+.btn-visit:hover {
+    background-color: #8a9e23;
+
+}
+
+.btn-delete {
+    background-color: #eb1d36;
+
+}
+
+.btn-delete:hover {
+    background-color: #d30820;
+}
+
+
+.slit-in-vertical {
+    -webkit-animation: slit-in-vertical 0.45s ease-out both;
+    animation: slit-in-vertical 0.45s ease-out both;
+}
+
+@-webkit-keyframes slit-in-vertical {
+    0% {
+        -webkit-transform: translateZ(-800px) rotateY(90deg);
+        transform: translateZ(-800px) rotateY(90deg);
+        opacity: 0;
+    }
+
+    54% {
+        -webkit-transform: translateZ(-160px) rotateY(87deg);
+        transform: translateZ(-160px) rotateY(87deg);
+        opacity: 1;
+    }
+
+    100% {
+        -webkit-transform: translateZ(0) rotateY(0);
+        transform: translateZ(0) rotateY(0);
+    }
+}
+
+@keyframes slit-in-vertical {
+    0% {
+        -webkit-transform: translateZ(-800px) rotateY(90deg);
+        transform: translateZ(-800px) rotateY(90deg);
+        opacity: 0;
+    }
+
+    54% {
+        -webkit-transform: translateZ(-160px) rotateY(87deg);
+        transform: translateZ(-160px) rotateY(87deg);
+        opacity: 1;
+    }
+
+    100% {
+        -webkit-transform: translateZ(0) rotateY(0);
+        transform: translateZ(0) rotateY(0);
+    }
+}
+
+/*---------------#region Alert--------------- */
+
+#dialogoverlay {
+    display: none;
+    opacity: .8;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background: #707070;
+    width: 100%;
+    z-index: 10;
+}
+
+#dialogbox {
+    display: none;
+    position: absolute;
+    background: #d379798e;
+    border-radius: 7px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.575);
+    transition: 0.3s;
+    width: 40%;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+#dialogbox:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.911);
+}
+
+.container {
+    padding: 2px 16px;
+}
+
+.pure-material-button-contained {
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 4px;
+    padding: 0 16px;
+    min-width: 64px;
+    height: 36px;
+    vertical-align: middle;
+    text-align: center;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+    color: rgb(var(--pure-material-onprimary-rgb, 255, 255, 255));
+    /* background-color: rgb(var(--pure-material-primary-rgb, 0, 77, 70)); */
+    background: #bb4120;
+
+    /* background-color: rgb(1, 47, 61) */
+    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    font-family: var(--pure-material-font, "Roboto", "Segoe UI", BlinkMacSystemFont, system-ui, -apple-system);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 36px;
+    overflow: hidden;
+    outline: none;
+    cursor: pointer;
+    transition: box-shadow 0.2s;
+}
+
+.bgDanger {
+    background: #d379798e;
+
+}
+
+.pure-material-button-contained::-moz-focus-inner {
+    border: none;
+}
+
+/* ---------------Overlay--------------- */
+
+.pure-material-button-contained::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(var(--pure-material-onprimary-rgb, 255, 255, 255));
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+/* Ripple */
+.pure-material-button-contained::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    border-radius: 50%;
+    padding: 50%;
+    width: 32px;
+    /* Safari */
+    height: 32px;
+    /* Safari */
+    background-color: rgb(var(--pure-material-onprimary-rgb, 255, 255, 255));
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1);
+    transition: opacity 1s, transform 0.5s;
+}
+
+/* Hover, Focus */
+.pure-material-button-contained:hover,
+.pure-material-button-contained:focus {
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+.pure-material-button-contained:hover::before {
+    opacity: 0.08;
+}
+
+.pure-material-button-contained:focus::before {
+    opacity: 0.24;
+}
+
+.pure-material-button-contained:hover:focus::before {
+    opacity: 0.3;
+}
+
+/* Active */
+.pure-material-button-contained:active {
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+.pure-material-button-contained:active::after {
+    opacity: 0.32;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0s;
+}
+
+/* Disabled */
+.pure-material-button-contained:disabled {
+    color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.38);
+    background-color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.12);
+    box-shadow: none;
+    cursor: initial;
+}
+
+.pure-material-button-contained:disabled::before {
+    opacity: 0;
+}
+
+.pure-material-button-contained:disabled::after {
+    opacity: 0;
+}
+
+#dialogbox>div {
+    background: #FFF;
+    margin: 8px;
+}
+
+#dialogbox>div>#dialogboxhead {
+    font-family: "PT Sans Caption", sans-serif;
+    font-weight: 600;
+    line-height: 24px;
+    color: var(--text-primary-color);
+    background: #f7ecde;
+    font-size: 19px;
+    padding: 10px;
+    /* color: rgb(255, 255, 255); */
+
+}
+
+#dialogbox>div>#dialogboxbody {
+    background: #f7ecde;
+    padding: 20px;
+    font-family: "PT Sans Caption", sans-serif;
+    /* font-size: 16px; */
+    font-weight: 400;
+    line-height: 24px;
+    /* color: var(--text-primary-color); */
+    color: red;
+}
+
+#dialogbox>div>#dialogboxfoot {
+    background: #f7ecde;
+
+    padding: 10px;
+    text-align: right;
+}
+
+/*#endregion Alert*/
