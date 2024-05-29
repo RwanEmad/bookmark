@@ -69,6 +69,8 @@ function displayBookmarks(bookmarks) {
 function clearInput() {
     bookmarkName.value = ""
     bookmarkUrl.value = ""
+    bookmarkName.classList.remove("is-valid")
+    bookmarkUrl.classList.remove("is-valid")
 }
 
 
